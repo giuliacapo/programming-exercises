@@ -1,59 +1,70 @@
 // Queue implementation using circular array (FIFO)
-// Supports put and get operations (FIFO)
+// Supports put (enqueue) and get (dequeue) operations
+// Time complexity: O(1) for put/get
 // Implemented during university data structures exercises
 
-typedef struct TipoCoda {
-	int n;    // number of elements 
-	int dim;  // max size
-	int head; // head position
-	int tail; // tail position
-	Tdato *s; // array
-	//Contructor
-	TipoCoda (int x) {
-	dim = x;
-	n = 0;
-	head = 0;
-	tail = 0;
-	s = new Tdato[x];
-	}
-	//Destructor
-	~TipoCoda(){
-		delete[] s;
-	}
-} TipoCoda;
+#include <iostream>
+using namespace std;
 
-// Utility functions 
-bool codaIsEmpty(TipoCoda* p) {
+// Example data type
+typedef int Tdato;
+
+struct TipoCoda {
+    int n;      // current number of elements
+    int dim;    // maximum size
+    int head;   // head index
+    int tail;   // tail index
+    Tdato* s;   // array to store elements
+
+    // Constructor
+    TipoCoda(int x) : n(0), dim(x), head(0), tail(0), s(new Tdato[x]) {}
+
+    // Destructor
+    ~TipoCoda() { delete[] s; }
+};
+
+// Check if queue is empty
+bool queueIsEmpty(TipoCoda* p) {
     return p->n == 0;
 }
 
-bool codaIsFull(TipoCoda* p) {
+// Check if queue is full
+bool queueIsFull(TipoCoda* p) {
     return p->n == p->dim;
 }
 
-// Main operations 
-void put(TipoCoda* p, Tdato d){
-
-    if (codaIsFull(p)) {
-        cout << "coda piena" << endl;
+// Enqueue (put) operation
+void put(TipoCoda* p, Tdato d) {
+    if (queueIsFull(p)) {
+        cout << "Queue full" << endl;
         return;
     }
-
     p->s[p->tail] = d;
     p->tail = (p->tail + 1) % p->dim;
     p->n++;
 }
 
-Tdato get(TipoCoda* p){
-
-    if (codaIsEmpty(p)) {
-        cout << "coda vuota" << endl;
+// Dequeue (get) operation
+Tdato get(TipoCoda* p) {
+    if (queueIsEmpty(p)) {
+        cout << "Queue empty" << endl;
         return -1;
     }
-
     Tdato d = p->s[p->head];
     p->head = (p->head + 1) % p->dim;
     p->n--;
-
     return d;
+}
+
+// Example usage
+int main() {
+    TipoCoda q(5);
+    put(&q, 10);
+    put(&q, 20);
+    put(&q, 30);
+
+    cout << "Dequeued: " << get(&q) << endl;
+    cout << "Dequeued: " << get(&q) << endl;
+
+    return 0;
 }
