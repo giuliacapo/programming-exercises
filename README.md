@@ -60,6 +60,21 @@ These exercises were implemented as part of university coursework and are intend
 
 ---
 
+## Example Exercises
+
+This section shows how the Stack (LIFO) and Queue (FIFO) implementations can be applied to solve simple practical exercises, similar to exam problems.
+
+- **exercise_lifo.cpp** – Demonstrates using a **Stack (LIFO)** to process `Tconferimento` items.  
+  Randomly generates 5 items, pushes them onto the stack, and processes them in **last-in-first-out** order.
+
+- **exercise_fifo.cpp** – Demonstrates using a **Queue (FIFO)** to process `Tconferimento` items.  
+  Randomly generates 5 items, adds them to a circular queue, and processes them in **first-in-first-out** order.
+
+All exercises include comments in English and example usage in `main()`.
+These exercises demonstrate practical applications of the implemented data structures and show problem-solving skills.
+
+---
+
 ## Notes
 - Each data structure and algorithm includes an example in main() for easy testing.
 - This repository demonstrates my understanding of fundamental programming concepts, algorithmic thinking and basic data structures.
