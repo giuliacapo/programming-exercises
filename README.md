@@ -1,4 +1,3 @@
-# programming-exercises
 # University Data Structures & Algorithms Exercises
 
 This repository contains implementations of basic **data structures** and **algorithms** from my first-year Computer Engineering course.  
