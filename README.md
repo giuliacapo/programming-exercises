@@ -1,6 +1,6 @@
 # University Data Structures & Algorithms Exercises
 
-This repository contains implementations of basic **data structures** and **algorithms** from my first-year Computer Engineering course.  
+This repository contains implementations of basic **data structures** and **algorithms** from my first semester Computer Engineering course.  
 All code is written in C++ and includes examples to run each program.  
 
 These exercises were implemented as part of university coursework and are intended to demonstrate understanding of fundamental concepts in **data structures**, **sorting**, and **searching algorithms**.
